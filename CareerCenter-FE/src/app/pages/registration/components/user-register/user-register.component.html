@@ -1,0 +1,159 @@
+<div class="parent">
+    <div >
+        <div class="modal modal-sheet position-static d-block bg-body-secondary" tabindex="-1" role="dialog" id="modalSignin">
+            <div  role="document">
+              <div>
+                <div class="modal-body ">
+                    <section *ngIf="flag; else signin">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-12 col-md-6 bsb-tpl-bg-platinum bg-card-log">
+                              <div class="d-flex flex-column justify-content-between h-100 p-3 ">
+                                <h3 class="m-0">{{'Welcome'|translate}}!</h3>
+                                <img class="img-fluid rounded mx-auto my-4" loading="lazy" src="../../../assets/logo.svg" width="245" height="80" alt="Logo">
+                                <p>You already have an account? <span (click)="toggleFlag()" class="link-primary" >Sign In</span></p>
+                            </div>
+                            </div>
+                            <div class="col-12 col-md-6 bsb-tpl-bg-lotion bg-light">
+                                <div class="p-3 ">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <div >
+                                        <h2 class="h3">{{'Sign Up'|translate}}</h2>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <form action="#!" [formGroup]="registerForm">
+                                     <span class="mistake">{{result}}</span>
+                                    <div class="row gy-3 gy-md-4 overflow-hidden">
+                                      <div class="col-12 mt-3">
+                                        <label for="firstName" >{{'First Name'|translate}} <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name"  formControlName="firstname" required>
+                                      </div>
+                                      <span class="success" *ngIf="registerForm.get('firstname')?.invalid && (registerForm.get('firstname')?.dirty || registerForm.get('firstname')?.touched)">
+                                       {{' Please provide a first name.'|translate}}
+                                      </span>
+                                      <div class="col-12 mt-3">
+                                        <label for="lastName" >{{'Last Name'|translate}} <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" formControlName="lastname" required>
+                                      </div>
+                                      <span class="success" *ngIf="registerForm.get('lastname')?.invalid && (registerForm.get('lastname')?.dirty || registerForm.get('lastname')?.touched)">
+                                        {{'Please provide a last name.'|translate}}
+                                      </span>
+                                      <div class="col-12 mt-3">
+                                        <label for="UserName" >{{'UserName'|translate}} <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="UserName" id="UserName" placeholder="UserName"  formControlName="username" required>
+                                      </div>
+                                      <span class="success" *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
+                                       {{' username must be at More than 8 characters long.'|translate}}
+                                      </span>
+                                      <div class="col-12 mt-3">
+                                        <label for="email" >{{'Email'|translate}} <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" formControlName="email" required>
+                                      </div>
+                                      <span class="mistake" *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+                                        {{'Please provide a valid email exm@gmail.com'|translate}}
+                                      </span>
+                                      <div class="col-12 mt-3">
+                                        <label for="password" >{{'Password'|translate}} <span class="text-danger">*</span></label>
+                                        <input type="password" class="form-control" name="password"  id="floatingPassword" formControlName="password" value="" required>
+                                      </div>
+                                      <span class="mistake" *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+{{'                                        Please provide a valid password address.'|translate}}
+                                      </span>
+                                      <div class="col-12 mt-3">
+                                            <small class="text-body-secondary">{{'By clicking Sign up, you agree to the terms of use.'|translate}}</small>
+                                      </div>
+                                      <div class="col-12">
+                                        <div class="d-grid">
+                                          <button (click)="onSignUp()" class="w-100 mb-2 btn btn-md rounded-3 btn-primary" type="submit" [disabled]="registerForm.invalid">{{'Sign Up'|translate}}</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                      </section>
+                  <ng-template #signin>
+                    <section>
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-12 col-md-6 bsb-tpl-bg-platinum bg-card-log p-3">
+                              <div class="d-flex flex-column justify-content-between h-100 ">
+                                <h3 class="m-0">{{'Welcome'|translate}}!</h3>
+                                <img class="img-fluid rounded mx-auto my-4" loading="lazy" src="../../../assets/logo.svg" width="245" height="80" alt="Logo">
+                                <p>You don't have an account?' <span (click)="toggleFlag()">"{{'Sign Up'|translate}}"</span></p>
+                              </div>
+                            </div>
+                            <div class="col-12 col-md-6 bsb-tpl-bg-lotion bg-light">
+                              <div class="p-3">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <div class="mb-2">
+                                      <h3>{{'Log in'|translate}}</h3>
+                                    </div>
+                                  </div>
+                                </div>
+                                <form action="#!" [formGroup]="logInForm">
+                                    <span class="mistake">{{result}}</span>
+                                  <div class="row gy-3 gy-md-4 overflow-hidden">
+                                    <div class="col-12">
+                                      <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                      <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required formControlName="email">
+
+                                    </div>
+                                    <span class="mistake" *ngIf="logInForm.get('email')?.invalid && (logInForm.get('email')?.dirty || logInForm.get('email')?.touched)">
+                                        {{'Please provide a valid email'|translate}} <!-- exm@gmail.com -->
+                                      </span>
+                                    <div class="col-12">
+                                      <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+                                      <input type="password" class="form-control" name="password" id="password" formControlName="password" value="" required>
+                                    </div>
+                                    <span class="mistake" *ngIf="logInForm.get('password')?.invalid && (logInForm.get('password')?.dirty || logInForm.get('password')?.touched)">
+                                      {{'  Please provide a valid password address.'|translate}}
+                                      </span>
+                                    <div class="col-12">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" name="remember_me" id="remember_me">
+                                        <label class="form-check-label text-secondary" for="remember_me">
+                                          Keep me logged in
+                                        </label>
+                                      </div>
+                                    </div>
+                                    <div class="col-12">
+                                      <div class="d-grid">
+                                        <button (click)="onSignIn()" class="w-100 mb-2 btn btn-md rounded-3 btn-primary" type="submit" [disabled]="logInForm.invalid">{{'Sign In'|translate}}</button>
+                                    </div>
+                                    </div>
+                                    <small class="text-body-secondary">{{'By clicking Sign up, you agree to the terms of use.'|translate}}</small>
+                                  </div>
+                                </form>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <hr class=" border-secondary-subtle">
+                                    <div class="text-end">
+                                      <!-- <a href="forget_password.html" class="link-secondary text-decoration-none">{{'Forgot password'|translate}}</a> -->
+                                    </div> 
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                  </ng-template>
+
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+ <!-- <div class="registration-wrapper">
+    <div class="login-container"></div>
+    <div class="register-container"></div>
+ </div> -->

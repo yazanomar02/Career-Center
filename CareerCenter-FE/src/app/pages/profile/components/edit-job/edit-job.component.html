@@ -1,0 +1,89 @@
+<form *ngIf="data.type == 'edit'" [formGroup]="editJobForm" (ngSubmit)="editJob()" class="needs-validation">
+  <div class="row g-3">
+      
+      <!-- Menu Select -->
+      <div class="col-sm-12">
+        <div class="between">
+          <h4>{{data.type}}</h4>
+          <button
+              type="button"
+              class="btn-close close pull-right"
+              aria-label="Close"
+              (click)="onNoClick()"
+            >
+              <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+        </div>
+        <hr>
+          <label class="form-label">{{'Select Job Category' | translate}}</label>
+          <select (change)="onClickCategory($event)" class="form-select">
+              <option *ngFor="let category of categoriesList$ | async" [value]="category.id">{{category.categoryName}}</option>
+          </select>
+      </div>
+
+    <!-- Title -->
+    <div class="col-sm-8">
+      <label class="form-label">{{'Job Title' | translate}}</label>
+      <input formControlName="title" type="text" class="form-control" placeholder="e.g., Senior Developer">
+    </div>
+
+    <!-- Description -->
+    <div class="col-12">
+      <label class="form-label">{{'Description' | translate}}</label>
+      <textarea formControlName="description" class="form-control" rows="3" placeholder="Describe the job responsibilities"></textarea>
+    </div>
+
+    <!-- Number -->
+    <div class="col-sm-4">
+      <label class="form-label">{{'Number of Positions' | translate}}</label>
+      <input formControlName="count" type="number" class="form-control" placeholder="e.g., 3">
+    </div>
+
+    <!-- URL -->
+    <div class="col-12">
+      <label class="form-label">{{'Application URL' | translate}}</label>
+      <input formControlName="url" type="url" class="form-control" placeholder="e.g., https://company.com/apply">
+    </div>
+
+  </div>
+
+  <hr class="my-4">
+
+  <button type="submit" class="w-100 btn btn-primary btn-lg" [disabled]="editJobForm.invalid">{{'update' | translate}}</button>
+</form>
+
+
+
+
+
+
+<div class="delete" *ngIf="data.type == 'delete'">
+  
+  <div class="between">
+    <h4>{{data.type}}</h4>
+    <button
+        type="button"
+        class="btn-close close pull-right"
+        aria-label="Close"
+        (click)="onNoClick()"
+      >
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+  </div>
+  <hr>
+  <div >
+    <span class="pe-2">{{'Are you sure you want to delete this job?'|translate}}</span>
+    <button (click)="deleteJob()" type="button" class="btn btn-danger">{{'Remove Job'|translate}}</button>
+
+  </div>
+</div>
+  
+
+
+
+
+
+
+
+
+

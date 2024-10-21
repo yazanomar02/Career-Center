@@ -1,0 +1,111 @@
+.bg-second-color {
+    background-color: rgb(233,233,233);
+    margin-bottom: 10px;
+}
+
+/* Start Left List */
+#left-list {
+    margin-left: 25px;
+    overflow-y :scroll;
+    height: 450px;
+    position: sticky;
+    top: 80px;
+}
+#left-list a {
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px;
+    color: gray;
+    cursor: pointer;
+}
+#left-list .square {
+    display: inline-block;
+    margin-right: 8px;
+    width: 17px;
+    height: 17px;
+    background-color: var(--nav-col);
+    border-radius: 5px;
+}
+
+.job {
+    background-color: rgb(252, 254, 255);
+    font-family: "Rubik", sans-serif;
+    padding: 10px;
+    box-shadow: 0 4px 24px -8px rgb(2,48,71,0.2); 
+    border-bottom: 2px solid var(--nav-col);
+}
+.job h3 {
+    font-size: 20px;
+    font-weight: bold;
+    border-left: 4px solid var(--third-user);
+    padding-left: 10px;
+}
+.job a {
+    color: var(--third-user);
+}
+.job img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+.job{
+    position: relative;
+}
+.job .job-details {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.8;
+}
+.job .open-position {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--third-user);
+}
+.profile-pro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-bottom: 2px;
+    width: 50px;
+    height: 50px;
+    background-color: #e6e3e3;
+    color: black;
+    font-weight: 800;
+    border-radius: 50%;
+    text-align: center;
+}
+
+
+.right-list {
+    position: sticky;
+    top: 80px;
+}
+.card {
+    border-color: var(--third-user) ;
+}
+.card .card-body {
+    margin: 2px 1px;
+}
+.card .card-body a {
+    margin: 0;
+    padding: 0;
+}
+.btn-primary {
+    background-color: var(--third-user);
+    border-color: var(--third-user);
+}
+/* End links */
+.sticky-top {
+    z-index: 0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(233,233,233);
+}

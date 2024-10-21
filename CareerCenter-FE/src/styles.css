@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files ..#B92B27 0d6efd*/
+:root {
+    --main: #1572ff;
+    --main-user: #5c6bc0;
+    --sec-user: #ef6c00;
+    --third-user: #15c39a;
+    --nav-bg: #ffffff;
+    --nav-col: #1d4369;
+    --svg-col: white;
+    --hover: #e6e3e3;
+
+    --main-color: white;
+    --dark-color: #010409;
+    --notice-color: rgb(168, 212, 253);
+}
+
+
+
+a{
+    text-decoration: none !important;
+    cursor: pointer !important;
+}

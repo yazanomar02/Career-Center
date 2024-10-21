@@ -1,0 +1,127 @@
+<div class="container">
+  <div class="row">
+    <!-- Services -->
+    <div id="left-list" class="col-3 sticky-top mt-4">
+      <div class="d-flex flex-column">
+        <a (click)="onClickCategory('0')" class="bg-second-color">
+          <span class="rounded">*</span>
+          <span>{{ "All Services" | translate }}</span>
+        </a>
+
+        <a *ngFor="let service of filteredServices">
+          <span class="square"></span>
+          <span (click)="onClickService(service.id)" class="service">{{
+            service.serviceName
+          }}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-6 mt-2">
+      <!-- Search -->
+      <div class="bg-white border-gray center-list mt-3">
+        <div class="row">
+          <div class="col p-2">
+            <div class="d-flex">
+              <span class="profile profile-pro ms-3">{{
+                username | cutTwoLetters
+              }}</span>
+              <input
+                [(ngModel)]="ListFilter"
+                class="w-75 border-gray rounded-pill bg-light ms-3 ps-3 text-start"
+                placeholder="What do you want to search for?"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Providers  d-flex justify-content-between-->
+      <div *ngFor="let provider of filteredproviders">
+        <div class="post bg-white border-gray mt-4" *ngIf="!provider.isDeleted">
+          <!-- provider Title -->
+          <div class="post-title pt-2">
+            <div class="d-flex">
+              <span class="profile-pro">{{
+                provider.aliasName | cutTwoLetters
+              }}</span>
+              <div class="d-flex flex-column ps-3">
+                <span class="fw-bold fs-6">{{ provider.aliasName }}</span>
+                <span class="text-gray-darker fs-6">{{ provider.skills }}</span>
+                <span class="fw-bold fs-6 text-success">{{
+                  !provider.isConnected ? "online now" : ""
+                }}</span>
+              </div>
+              <div class="follow ps-3">
+                <span class="text-primary">{{ "" | translate }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- provider Body -->
+          <div class="post-body pt-2 ps-3">
+            <div class="post-title fw-bold">
+              <a class="text-decoration-non post-link">
+                {{ provider.title }}
+              </a>
+            </div>
+            <div class="post-text pt-1">
+              {{ provider.description }}
+            </div>
+          </div>
+          <!-- provider image -->
+          <div class="post-image pt-2">
+            <img class="img-fluid" [src]="provider.imgUrl" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col mt-4">
+      <!-- Categories -->
+      <div class="right-list sticky-top">
+        <ul class="list-group mb-3">
+          <li
+            class="list-group-item not bg-second-color d-flex justify-content-center"
+          >
+            <div class="ps-2 lh-1">
+              <span class="fs-6 ps-2">{{ "Categories" | translate }}</span>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="list-group" *ngFor="let category of categoriesList$ | async">
+          <li
+            (click)="onClickCategory(category.id)"
+            class="list-group-item d-flex pb-2"
+          >
+            <div class="ps-2">
+              <a>
+                <span class="fw-bold fs-6 ps-2">{{
+                  category.categoryName
+                }}</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="card mb-4 rounded-3 shadow-sm mt-1">
+          <div class="card-body">
+            <ul class="list-unstyled">
+              <li>
+                {{ "Start offering your service on our website" | translate }}
+              </li>
+            </ul>
+            <a
+              routerLink="/providers/register-as-provider"
+              type="button"
+              class="w-100 btn btn-lg btn-primary"
+              >providing service</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

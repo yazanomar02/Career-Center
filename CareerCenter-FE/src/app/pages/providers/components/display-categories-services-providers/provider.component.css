@@ -1,0 +1,135 @@
+.bg-second-color {
+    background-color: rgb(233,233,233);
+    margin-bottom: 10px;
+}
+
+/* Start Left List */
+#left-list {
+    margin-left: 25px;
+    overflow-y :scroll;
+    height: 450px;
+    position: sticky;
+    top: 80px;
+}
+#left-list a {
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px;
+    color: gray;
+    cursor: pointer;
+}
+.catg {
+    background-color: gray;
+}
+#left-list .square {
+    display: inline-block;
+    margin-right: 8px;
+    width: 17px;
+    height: 17px;
+    background-color: var(--nav-col);
+    border-radius: 5px;
+}
+.right-list {
+    position: sticky;
+    top: 80px;
+}
+.service {
+    border-bottom: 1px solid transparent;
+}
+.service:hover {
+    border-color: var(--nav-col);
+}
+/* End Left List */
+
+/* Start display providers */
+.border-gray {
+    border-style: solid;
+    border-color: rgb(221,221,221);
+    border-width: 1px;
+}
+.text-gray-dark {
+    color: rgb(117,117,177);
+}
+.post-link {
+    color: black;
+}
+.list-group li:not(.not) {
+    cursor: pointer;
+}
+.list-group li:not(.not):hover {
+    background-color: var(--hover);
+    color: var(--nav-col);
+    font-weight: bold;
+    transition: all 15ms;
+}
+.center-list {
+    border-bottom-color: var(--third-user);
+    position: sticky;
+    top: 60px;
+}
+.profile-pro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--sec-user);
+    color: white;
+    font-weight: 800;
+    border-radius: 50%;
+    text-align: center;
+}
+.profile {
+    width: 32px;
+    height: 32px;
+    background-color: var(--third-user);
+}
+/* End display providers */
+.list-group-item {
+    border-radius: 0;
+}
+
+/* Start links */
+input {
+    color: black;
+    font-weight: 500;
+}
+.links {
+    max-width: 165px;
+    margin-top: 10px;
+    margin-left: 35px;
+    background-color: rgb(233,233,233);
+    margin-bottom: 10px;
+}
+.links a {
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px;
+    color: gray;
+}
+.card {
+    border-color: var(--third-user) ;
+}
+.card .card-body {
+    margin: 2px 1px;
+}
+.card .card-body a {
+    margin: 0;
+    padding: 0;
+}
+.btn-primary {
+    background-color: var(--third-user);
+    border-color: var(--third-user);
+}
+/* End links */
+.sticky-top {
+    z-index: 0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(233,233,233);
+}

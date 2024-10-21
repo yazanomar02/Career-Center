@@ -1,0 +1,4 @@
+.bg-col {
+    background-color: var(--nav-col);
+    color: var(--nav-col);
+}

@@ -1,0 +1,121 @@
+:host {
+    --dropdown-rad: 45px;
+  }
+  .contact {
+    background-color: rgb(162, 209, 253);
+    color: black;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .qu-borderBottom {
+    box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.04);
+  }
+  .qu-boxShadow--medium {
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: #dee0e1;
+  }
+  .border-bottom {
+    border-bottom: 2px solid #b92b27;
+  }
+  svg:hover {
+    color: var(--nav-col);
+  }
+  .brand {
+    color: white;
+  }
+  nav {
+    background-color: var(--main);
+    z-index: 1000;
+  }
+  .focus {
+    color: var(--nav-col);
+  }
+  .nav-item {
+    margin: 0;
+  }
+  .user {
+    border-bottom: 2px dotted;
+  }
+  .text-main-color {
+    color: var(--svg-col);
+  }
+  
+  .bg-main-color {
+    background-color: var(--nav-col);
+    color: white;
+  }
+  .nav-item svg {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+  }
+  .bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: var(--nav-col) !important;
+    color: white;
+  }
+  
+  .search-icon {
+    padding-left: 35px;
+    background: url("src\\helpers\\search.png") no-repeat 8px;
+    background-size: 20px;
+  }
+  .profile {
+    width: 45px;
+    height: 45px;
+    padding: 7px;
+  }
+  
+  .admin div,
+  .admin button {
+    color: white;
+  }
+  .admin div {
+    border-bottom-left-radius: var(--dropdown-rad);
+    border-top-left-radius: var(--dropdown-rad);
+    padding: 5px 13px 5px 15px;
+  }
+  .admin button {
+    border-bottom-right-radius: var(--dropdown-rad);
+    border-top-right-radius: var(--dropdown-rad);
+    border-left-style: solid;
+    border-left-color: white;
+    border-width: 1px;
+    background-color: var(--nav-col);
+  }
+  .admin ul li:hover {
+    background-color: #f1f2f2c7;
+  }
+  .admin ul li a {
+    padding: 5px;
+    border-left: 2px solid transparent;
+    color: var(--nav-col);
+    font-weight: 600;
+  }
+  .admin ul li:hover a {
+    transition: padding 0.5s;
+    padding-left: 10px;
+    border-color: var(--nav-col);
+  }
+  
+  .btn-primary {
+    background-color: var(--nav-col);
+    border-color: var(--nav-col);
+    color: white;
+  }
+  .bg-light {
+    background-color: #f1f2f2 !important;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .nav-link-opacity {
+    opacity: 0.5;
+  }
+  .active {
+    opacity: 1;
+  }
+  

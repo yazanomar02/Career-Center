@@ -1,0 +1,164 @@
+<div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="./helpers/register-provider.jpg" alt="" width="72" height="57">
+        <h2>{{'Professional registration'| translate}}</h2>
+        <p class="lead">
+           {{' Register as a service provider on our website to facilitate access to the service you provide'| translate}}</p>
+      </div>
+  
+      <div class="row g-5 mb-4">
+        <div class="col-md-4 col-lg-3 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="txt">{{'Most registered services'| translate}}</span>
+            <span class="badge num rounded-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">{{'Home'| translate}}</h6>
+                <small class="text-muted">{{'House Cleaning'| translate}}</small><br>
+                <small class="text-muted">{{'House Workers'| translate}}</small><br>
+                <small class="text-muted">{{'Babysitting'| translate}}</small><br>
+              </div>
+              <span class="text-muted">3</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">{{'Lessons'| translate}}</h6>
+                  <small class="text-muted">{{'English'| translate}}</small><br>
+                  <small class="text-muted">{{'Spanish'| translate}}</small><br>
+                  <small class="text-muted">{{'Math'| translate}}</small><br>
+                  <small class="text-muted">{{'IT'| translate}}</small><br>
+                  <small class="text-muted">{{'Physics'| translate}}</small><br>
+                  <small class="text-muted">{{'Programming'| translate}}</small>
+                </div>
+                <span class="text-muted">6</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">{{'Information Technology'| translate}}</h6>
+                  <small class="text-muted">{{'Web Devlopment'| translate}}</small><br>
+                  <small class="text-muted">{{'Unity'| translate}}</small><br>
+                  <small class="text-muted">{{'Mobile Application'| translate}}</small>
+                </div>
+                <span class="text-muted">3</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-8 col-lg-9">
+          <h4 class="mb-3">{{'Service details'| translate}}</h4>
+          <form [formGroup]="providerForm" (ngSubmit)="submitProvider()"  class="needs-validation">
+            <div class="row g-3">
+
+                <div class="col-md-4">
+                    <label class="form-label">{{'Categories'| translate}}</label>
+                    <select (change)="onClickCategory($event)" class="form-select" >
+                      <option *ngFor="let category of categoriesList$ | async" [value]="category.id">{{category.categoryName}}</option>
+                    </select>
+                    <!-- <div *ngIf="providerForm.get('category')?.invalid && (providerForm.get('category')?.dirty || providerForm.get('category')?.touched)">
+                      Please select a valid category.
+                    </div> -->
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">{{'Services'|translate}}</label>
+                    <select (change)="onClickSservice($event)"  class="form-select">
+                      <option *ngFor="let service of filteredServices" [value]="service.id"> {{service.serviceName}}</option>
+                    </select>
+                    
+                    <!-- <div *ngIf="providerForm.get('service')?.invalid && (providerForm.get('service')?.dirty || providerForm.get('service')?.touched)">
+                      Please provide a valid service.
+                    </div> -->
+                  </div>
+
+              <div class="col-sm-4">
+                <label class="form-label">{{'Name'|translate}}</label>
+                <input formControlName="aliasName" type="text" class="form-control" placeholder="Alias Name">
+                <div  *ngIf="providerForm.get('aliasName')?.invalid && (providerForm.get('aliasName')?.dirty || providerForm.get('aliasName')?.touched)">
+                 {{' Valid first name is required.'|translate}}
+                </div>
+              </div>
+  
+              <div class="col-sm-8">
+                <label class="form-label">{{'Title'|translate}}</label>
+                <input formControlName="title" type="text" class="form-control" placeholder="Learn to program mobile applications using flutter technology">
+                <div *ngIf="providerForm.get('title')?.invalid && (providerForm.get('title')?.dirty || providerForm.get('title')?.touched)">
+                  {{'Valid last title is required.'|translate}}
+                </div>
+              </div>
+  
+              <div class="col-sm-12">
+                <label class="form-label">{{'Skills'|translate}}</label>
+                <input formControlName="skills" type="text" class="form-control" placeholder="Instructor IT , programmer">
+                <div *ngIf="providerForm.get('skills')?.invalid && (providerForm.get('skills')?.dirty || providerForm.get('skills')?.touched)">
+                 {{' Valid last skills is required'|translate}}.
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <label class="form-label">{{'Description'|translate}}</label>
+                <input formControlName="description" type="text" class="form-control" placeholder="" >
+                <div *ngIf="providerForm.get('description')?.invalid && (providerForm.get('description')?.dirty || providerForm.get('description')?.touched)">
+                 {{' Please enter your description address.'|translate}}
+                </div>
+              </div>
+  
+              <div class="col-6">
+                <label class="form-label">{{'contact'|translate}} 1 <span class="text-muted">(Phone)</span></label>
+                <input formControlName="phone" type="tel" class="form-control" placeholder="00905983729912">
+              </div>
+              <div class="col-6">
+                <label class="form-label">{{'contact'|translate}} 2 <span class="text-muted">(Telegram)</span></label>
+                <input formControlName="telegram" type="text" class="form-control" placeholder="@username">
+              </div>
+              <div class="col-6">
+                <label class="form-label">{{'Choose an image for service'|translate}}<span class="text-muted">(Image)</span></label>
+                <input formControlName="imgUrl"  type="file" class="form-control" placeholder="@username">
+              </div>
+  
+              <div class="col-12 mb-2">
+                <label class="form-label">{{'Worktime'|translate}}</label>
+                <input formControlName="durationTime" type="text" class="form-control" placeholder="" >
+                <div *ngIf="providerForm.get('durationTime')?.invalid && (providerForm.get('durationTime')?.dirty || providerForm.get('durationTime')?.touched)">
+                 {{' Please enter your description address.'|translate}}
+                </div>
+              </div>
+            </div>
+  
+            <h4 class="mb-3">{{'How to provide the service'|translate}}</h4>
+  
+            <div class="my-3">
+              <div class="form-check">
+                <input id="online" formControlName="serviceMode" name="serviceMode" type="radio" class="form-check-input" value="online" checked>
+                <label for="online" class="form-check-label" >{{'Online'|translate}}</label>
+              </div>
+              <div class="form-check">
+                <input id="physical" formControlName="serviceMode" name="serviceMode" type="radio" class="form-check-input" value="physical">
+                <label for="physical" class="form-check-label" >{{'physicist'|translate}}</label>
+              </div>
+              <div class="form-check">
+                <input id="hybrid" formControlName="serviceMode" name="serviceMode" type="radio" class="form-check-input" value="hybrid">
+                <label for="hybrid" class="form-check-label">{{'Hybrid'|translate}}</label>
+              </div>
+            </div>
+
+            <hr class="my-4">
+  
+            <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="providerForm.invalid">{{'Submit'|translate}}</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="pb-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2023–2024 Career Center</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="link-opacity-100-hover" routerLink="/welcome">Welcome</a></li>
+          <li class="list-inline-item"><a class="link-opacity-100-hover" routerLink="/providers">Services</a></li>
+          <li class="list-inline-item"><a class="link-opacity-100-hover" routerLink="/careers/find-job">Jobs</a></li>
+          <li class="list-inline-item"><a class="link-opacity-100-hover" routerLink="/projects/all">Projects</a></li>
+          <li class="list-inline-item"><a class="link-opacity-100-hover" routerLink="/about-us">About us</a></li>
+        </ul>
+      </footer>
+  

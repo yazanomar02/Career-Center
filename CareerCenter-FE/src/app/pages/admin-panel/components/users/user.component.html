@@ -1,0 +1,56 @@
+<div class="container">
+  <h2 class="display-6 text-center mb-4">{{ "Users" | translate }}</h2>
+
+  <div class="table-responsive">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th style="width: 20%">{{ "Email" | translate }}</th>
+          <th style="width: 20%">{{ "UserName" | translate }}</th>
+          <th style="width: 20%">{{ "Role" | translate }}</th>
+          <th style="width: 20%">{{ "Action" | translate }}</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let user of users$ | async">
+        <tr>
+          <td class="text-start">
+            <svg class="bi" width="24" height="24">
+              <use xlink:href="#check" /></svg
+            >{{ user.email }}
+          </td>
+          <th scope="row" class="text-center">{{ user.userName }}</th>
+          <td>
+            {{ getRole(roles[user.id!]) }}
+          </td>
+          <td>
+            <ng-container *ngIf="amI(user.email)">
+              <button
+                class="btn btn-sm btn-danger me-1"
+                (click)="deleteUser(user.id)"
+              >
+                {{
+                  "Delete" + (isAdmin(roles[user.id!]) ? "Admin" : "User")
+                    | translate
+                }}
+              </button>
+              <button
+                *ngIf="!isAdmin(roles[user.id!])"
+                class="btn btn-sm btn-primary me-1"
+                (click)="addRole(user.id)"
+              >
+                {{ "As Admin" | translate }}
+              </button>
+              <button
+                *ngIf="getRole(roles[user.id!]) != 'User'"
+                class="btn btn-sm btn-warning"
+                (click)="deleteRole(user.id, roles[user.id!])"
+              >
+                {{ "Delete Role" | translate }}
+              </button>
+            </ng-container>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

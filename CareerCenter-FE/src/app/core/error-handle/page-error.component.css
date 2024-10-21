@@ -1,0 +1,31 @@
+@import 'https://fonts.googleapis.com/css?family=VT323';
+
+.fullpage {
+    background-color: #000084;
+    color: white;
+    font: normal 20px/1.25rem 'VT323', monospace; 
+    height: 654px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pp {
+    background-color: #aaaaaa;
+    padding: 10px;
+    color: black;
+    width: 100px;
+    height: 70px;
+    text-align: center;
+}
+.notfound {
+    margin: 0 auto;
+}
+p {
+    padding-left: 10px;
+}
+nav {
+    padding-left: 50px
+}
+nav a {
+        color: #aaaaaa;
+}

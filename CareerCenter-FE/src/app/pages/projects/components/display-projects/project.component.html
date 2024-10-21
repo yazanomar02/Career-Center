@@ -1,0 +1,42 @@
+<!-- <div class="container"> -->
+  <div class="row ms-5 me-5">
+
+
+    <div class="col-10 mt-4">
+      <div class="my-3 p-3 bg-body rounded shadow-sm">
+          <h6 class="border-bottom pb-2 mb-0">{{'Projects'|translate}}</h6>
+        <div class="text-body-secondary p-5" *ngFor="let project of projects | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalItems }">
+          <div class="d-flex justify-content-between">
+            <p class="d-block text-gray-dark">{{project.title}}</p>
+            <p> {{project.createdDate}}</p>
+          </div>
+          <div class="pt-3 border-bottom"> 
+                <p class="pb-3 mb-0 small lh-sm">
+                  {{project.description}}
+              </p>
+              <button class="btn btn-primary p-1">{{'Add Offer'|translate}}</button>
+          </div>
+        </div> 
+        <pagination-controls  [maxSize]="15" (pageChange)="onPageChange($event)"></pagination-controls>
+      </div>
+    </div>
+
+
+    <div class="col mt-4">
+      <div class="right-list sticky-top mt-3 ms-4">
+          <div class="card rounded-3 shadow-sm">
+     
+              <div class="card-body p-4">
+                <ul class="list-unstyled">
+                  <li>Start a project on our website</li>
+                </ul>
+                <a (click)="openDialog()" type="button" class="w-100 btn btn-lg btn-primary">Add a project</a>
+              </div>
+          </div>
+      </div>
+     </div>
+
+
+
+  </div>
+<!-- </div> -->

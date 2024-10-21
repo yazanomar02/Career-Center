@@ -1,0 +1,281 @@
+<main>
+  <div class="container col-xxl-8 px-4 py-5">
+    <div id="register" class="row mt-5">
+      <div class="card-hover col-4">
+        <div class="card">
+          <div
+            class="bg-image hover-overlay"
+            data-mdb-ripple-init
+            data-mdb-ripple-color="light"
+          >
+            <img src="helpers/about1.PNG" class="img-fluid" />
+            <a href="#!">
+              <div
+                class="mask"
+                style="background-color: rgba(251, 251, 251, 0.15)"
+              ></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ "Service" | translate }}</h5>
+            <p class="card-text">
+              Be a customer of the service providers on our website and learn
+              more about the world of money
+            </p>
+            <a
+              routerLink="/providers"
+              class="btn btn-primary"
+              data-mdb-ripple-init
+              >Services Page</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="card-hover col-4">
+        <div class="card">
+          <div
+            class="bg-image hover-overlay"
+            data-mdb-ripple-init
+            data-mdb-ripple-color="light"
+          >
+            <img src="helpers/about2.PNG" class="img-fluid" />
+            <a href="#!">
+              <div
+                class="mask"
+                style="background-color: rgba(251, 251, 251, 0.15)"
+              ></div>
+            </a>
+          </div>
+          <div class="width-job card-body card__content">
+            <div>
+              <h5 class="card-title">{{ "Job" | translate }}</h5>
+              <p class="card-text">
+                {{
+                  "If you are looking for jobs and have not yet found any on our website that covers various types of employment, register easily"
+                    | translate
+                }}
+              </p>
+              <a
+                routerLink="/careers/find-job"
+                class="btn btn-primary"
+                data-mdb-ripple-init
+                >{{ "Jobs Page" | translate }}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-hover col-4">
+        <div class="card">
+          <div
+            class="bg-image hover-overlay"
+            data-mdb-ripple-init
+            data-mdb-ripple-color="light"
+          >
+            <img src="helpers/about3.PNG" class="img-fluid" />
+            <a href="#!">
+              <div
+                class="mask"
+                style="background-color: rgba(251, 251, 251, 0.15)"
+              ></div>
+            </a>
+          </div>
+          <div class="card-body card__content">
+            <div>
+              <h5 class="card-title">{{ "Project" | translate }}</h5>
+              <p class="card-text">
+                If you have a project or work and are looking for specialists
+                and experts to do that work, you will find on the projects page
+                many people submitting offers.
+              </p>
+              <a
+                href="projects/all"
+                class="btn btn-primary"
+                data-mdb-ripple-init
+                >{{ "Projects Page" | translate }}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="b-example-divider"></div>
+
+  <!-- Comments -->
+  <link
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    rel="stylesheet"
+  />
+  <div class="container">
+    <div class="row p-4">
+      <div class="col-12 box-com">
+        <div class="be-comment">
+          <div class="be-img-comment">
+            <a>
+              <div class="img-manager">SM</div>
+            </a>
+          </div>
+          <div class="be-comment-content">
+            <span class="be-comment-name">
+              <a class="fs-5">{{ "site manager" | translate }}</a>
+            </span>
+            <span class="be-comment-time">
+              <i class="fa fa-clock-o"></i>
+              2023-12-20T17 at 3:16am
+            </span>
+
+            <p class="be-comment-text manager">
+              {{
+                " I hope you like this site and the services, work and projects it provides. I hope you share your opinions and any topic you are thinking of presenting on our site. Please share that with us."
+                  | translate
+              }}
+            </p>
+          </div>
+        </div>
+        <div class="be-comment-block">
+          <h1 class="comments-title">
+            {{ commentsNum }} {{ "Comments" | translate }}
+          </h1>
+
+          <div *ngFor="let comment of comments" class="loop">
+            <div class="be-comment">
+              <div class="be-img-comment">
+                <a>
+                  <div class="img-user">{{ comment.name | cutTwoLetters }}</div>
+                </a>
+              </div>
+              <div class="be-comment-content">
+                <span class="be-comment-name">
+                  <a href="blog-detail-2.html">{{ comment.name }}</a>
+                </span>
+                <span class="be-comment-time">
+                  <i class="fa fa-clock-o"></i>
+                  {{ comment.createdDate }}
+                </span>
+
+                <p class="be-comment-text">{{ comment.text }}</p>
+              </div>
+            </div>
+          </div>
+
+          <form
+            [formGroup]="commentForm"
+            (ngSubmit)="onComment()"
+            class="form-block"
+          >
+            <div class="row">
+              <div class="col-xs-12 col-sm-6">
+                <div class="form-group fl_icon">
+                  <div class="icon"><i class="fa fa-user"></i></div>
+                  <input
+                    formControlName="name"
+                    class="form-input"
+                    type="text"
+                    placeholder="Your name"
+                  />
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 fl_icon">
+                <div class="form-group fl_icon">
+                  <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                  <input
+                    formControlName="email"
+                    class="form-input"
+                    type="text"
+                    placeholder="Your email"
+                  />
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <div class="form-group">
+                  <textarea
+                    formControlName="text"
+                    class="form-input"
+                    required=""
+                    placeholder="Your text"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <button
+                  class="btn btn-primary pull-right"
+                  type="submit"
+                  [disabled]="commentForm.invalid"
+                >
+                  submit
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="">
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #1572ff">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: CTA -->
+        <section class="d-flex justify-content-between align-items-center">
+          <p>
+            <a class="pe-3" routerLink="/providers">{{
+              "Services" | translate
+            }}</a>
+            <a class="pe-3" routerLink="/careers/find-job">{{
+              "Jobs" | translate
+            }}</a>
+            <a class="pe-3" routerLink="/careers">{{
+              "Projects" | translate
+            }}</a>
+          </p>
+          <div class="pb-3">
+            <div class="text-center p-3">
+              © 2024 Copyright:
+              <a class="text-white" href="http://localhost:4200/welcome"
+                >CareerCenter.com</a
+              >
+            </div>
+          </div>
+          <div class="pb-3">
+            <span
+              ><img
+                width="25"
+                height="25"
+                src="helpers/facebook.png"
+                alt="facebook"
+            /></span>
+            <span class="ms-4"
+              ><img
+                width="25"
+                height="25"
+                src="helpers/twitter.png"
+                alt="twitter"
+            /></span>
+            <span class="ms-4"
+              ><img
+                width="25"
+                height="25"
+                src="helpers/instagram.png"
+                alt="instagram"
+            /></span>
+            <span class="ms-4"
+              ><img
+                width="25"
+                height="25"
+                src="helpers/github.png"
+                alt="github"
+            /></span>
+          </div>
+        </section>
+        <!-- Section: CTA -->
+      </div>
+      <!-- Grid container -->
+    </footer>
+    <!-- Footer -->
+  </section>
+
+  <div class="b-example-divider mb-0"></div>
+</main>

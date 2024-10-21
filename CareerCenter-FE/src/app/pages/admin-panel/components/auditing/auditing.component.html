@@ -1,0 +1,37 @@
+<div class="content">
+    <div class="container">
+    <div class="table-responsive custom-table-responsive pt-5">
+    <table class="table custom-table">
+    <thead>
+    <tr>
+    <th scope="col">
+    <label class="control control--checkbox">
+    <input type="checkbox" class="js-check-all" />
+    <div class="control__indicator"></div>
+    </label>
+    </th>
+    <th scope="col">{{'User Id'|translate}}</th>
+    <th scope="col">{{'Message'|translate}}</th>
+    <th scope="col">{{'Page Url'|translate}}</th>
+    <th scope="col">{{'Date'|translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr scope="row" *ngFor="let audit of audits$ | async">
+            <th scope="row">
+                <label class="control control--checkbox">
+                <input type="checkbox" />
+                <div class="control__indicator"></div>
+                </label>
+            </th>
+            <td><a href="#">{{audit.userId}}</a></td>
+            <td>
+                {{audit.status}}
+            <small class="d-block">{{audit.message}}</small>
+            </td>
+            <td>{{audit.url}}</td>
+            <td>{{audit.createdDate}}</td>
+         </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,63 @@
+<main>
+<div class="row m-0 p-0">
+      <div class="col-lg-8 p-0">
+        <div class="left d-flex justify-content-center align-items-center">
+          <!-- <svg viewbox="0 0 100 20">
+            <defs>
+              <linearGradient id="gradient">
+                <stop color="#000"/>
+              </linearGradient>
+              <pattern id="wave" x="0" y="-0.5" width="100%" height="100%" patternUnits="userSpaceOnUse">
+                <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)">
+                  <animateTransform
+                      attributeName="transform"
+                      begin="0s"
+                      dur="1.5s"
+                      type="translate"
+                      from="0,0"
+                      to="40,0"
+                      repeatCount="indefinite" />
+                </path>
+              </pattern>
+            </defs>
+            <text text-anchor="middle" x="50" y="15" font-size="17" fill="white" fill-opacity="0.1">DelveHub</text>
+            <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)"  fill-opacity="1">DelveHub</text>
+          </svg> -->
+
+          <span class="text first-text pe-2">{{'Welcome'|translate}}</span>
+          <span class="text sec-text">{{'Career Center.'|translate}}</span>
+        </div>
+      </div>
+    <div class="col-md-4 m-0 p-0">
+          <div class="right d-flex justify-content-center align-items-center">
+              <div>
+                <label for="country">{{'Choose your country'|translate}}</label>
+                <select (change)="selectCountry($event)" class="custom-select d-block w-100" id="country" required>
+                  <option value="syria">Syria</option>
+                  <option value="banan">Lebanon</option>
+                  <option value="jordan">Jordan</option>
+                  <option value="egypt">Egypt</option>
+                  <option value="iraq">Iraq</option>
+                  <option value="saudi">Saudi Arabia</option>
+                  <option value="qatar">Qatar</option>
+                  <option value="UAE">The UAE</option>
+                  <option value="türkiye">Turkey</option>
+                </select>
+
+                <label for="country">{{'Select your language'|translate}}</label>
+                <select (change)="selectLanguage($event)" class="custom-select d-block w-100" id="country" required>
+                  <option value="ar">{{'Arabic'|translate}}</option>
+                  <option value="en">{{'English'|translate}}</option>
+                </select>
+
+                <label for="country">{{'Themes'|translate}}</label>
+                <select (change)="selectTheme($event)" class="custom-select d-block w-100" id="country" required>
+                  <option value="light">{{'Light'|translate}}</option>
+                  <option value="dark">{{'Dark'|translate}}</option>
+                </select>
+                <button (click)="continue()" class="btn btn-primary">{{'Continue'|translate}}</button>
+              </div>
+          </div>
+      </div>
+</div>
+</main>

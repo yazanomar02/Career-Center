@@ -1,0 +1,196 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<nav *ngIf="showHeader" class="navbar navbar-expand-lg navbar-light qu-borderBottom qu-boxShadow--medium p-0 ps-5 sticky-top">
+  <div class="container">
+    <div style="width: 60px !important;">
+        <div class="collapse navbar-collapse" style="width: 60px !important; display: flex; justify-content: flex-start;" id="navbar-native">
+            <!-- Pages -->
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="navbar-brand" style="display: flex; align-items: center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px">
+                      <rect x="3" y="7" width="18" height="13" rx="2" ry="2"></rect>
+                      <path d="M16 3H8v4h8V3z"></path>
+                      <path d="M12 13v-4"></path>
+                      <path d="M9 16l3-3 3 3"></path>
+                    </svg>
+                    <span class="fw-bold fs-4 brand">{{'Career Center'|translate}}</span>
+                  </a>
+              </li>
+            </ul>
+          </div>
+
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-native" aria-controls="navbar-native" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-native">
+      <!-- Pages -->
+      <ul class="navbar-nav ms-auto">
+        <!-- Welcome -->
+        <li class="nav-item">
+          <a routerLink="/welcome" routerLinkActive="active" class="nav-link-opacity nav-link">
+            <svg class="text-main-color" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+            </svg>
+          </a>
+        </li>
+        <!-- Providers -->
+        <li class="nav-item">
+          <a routerLink="/providers" routerLinkActive="active" class="nav-link-opacity nav-link">
+            <svg class="text-main-color" fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+              <path
+                d="M680-119q-8 0-16-2t-15-7l-120-70q-14-8-21.5-21.5T500-249v-141q0-16 7.5-29.5T529-441l120-70q7-5 15-7t16-2q8 0 15.5 2.5T710-511l120 70q14 8 22 21.5t8 29.5v141q0 16-8 29.5T830-198l-120 70q-7 4-14.5 6.5T680-119ZM400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18h14q6 0 12 2-8 18-13.5 37.5T404-360h-4q-71 0-127.5 18T180-306q-9 5-14.5 14t-5.5 20v32h252q6 21 16 41.5t22 38.5H80Zm320-400q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0-80Zm12 400Zm174-166 94 55 94-55-94-54-94 54Zm124 208 90-52v-110l-90 53v109Zm-150-52 90 53v-109l-90-53v109Z"
+              />
+            </svg>
+          </a>
+        </li>
+        <!-- Jobs -->
+        <li class="nav-item">
+          <a routerLink="/careers/find-job" routerLinkActive="active" class="nav-link-opacity nav-link" href="#">
+            <span class="position-relative me-auto">
+              <svg class="text-main-color" fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path
+                  d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm0-80h640v-440H160v440Zm240-520h160v-80H400v80ZM160-200v-440 440Z"
+                />
+              </svg>
+              <span class="position-absolute top-0 start-50 ms-3 translate-middle badge rounded-pill bg-primary">
+                7+
+                <!-- <span class="visually-hidden">unread messages</span> -->
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <!-- Projects -->
+        <li class="nav-item">
+          <a routerLink="/projects/all" routerLinkActive="active" class="nav-link-opacity nav-link" href="#">
+            <span class="position-relative me-auto">
+              <svg class="text-main-color" fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path
+                  d="m656-120-56-56 63-64-63-63 56-57 64 64 63-64 57 57-64 63 64 64-57 56-63-63-64 63Zm-416-80q17 0 28.5-11.5T280-240q0-17-11.5-28.5T240-280q-17 0-28.5 11.5T200-240q0 17 11.5 28.5T240-200Zm0 80q-50 0-85-35t-35-85q0-50 35-85t85-35q37 0 67.5 20.5T352-284q39-11 63.5-43t24.5-73v-160q0-83 58.5-141.5T640-760h46l-63-63 57-57 160 160-160 160-57-56 63-64h-46q-50 0-85 35t-35 85v160q0 73-47 128.5T354-203q-12 37-43.5 60T240-120Zm-64-480-56-56 63-64-63-63 56-57 64 64 63-64 57 57-64 63 64 64-57 56-63-63-64 63Z"
+                />
+              </svg>
+              <!--<svg class="text-main-color" fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M0-240v-63q0-43 44-70t116-27q13 0 25 .5t23 2.5q-14 21-21 44t-7 48v65H0Zm240 0v-65q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-26-6.5-49T754-397q11-2 22.5-2.5t23.5-.5q72 0 116 26.5t44 70.5v63H780Zm-455-80h311q-10-20-55.5-35T480-370q-55 0-100.5 15T325-320ZM160-440q-33 0-56.5-23.5T80-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T160-440Zm640 0q-33 0-56.5-23.5T720-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T800-440Zm-320-40q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm0-80q17 0 28.5-11.5T520-600q0-17-11.5-28.5T480-640q-17 0-28.5 11.5T440-600q0 17 11.5 28.5T480-560Zm1 240Zm-1-280Z"/></svg>-->
+              <span class="notice-color position-absolute top-0 start-50 ms-3 translate-middle p-1 bg-primary border border-light rounded-circle"> </span>
+            </span>
+          </a>
+        </li>
+        <!--Travel -->
+        <!-- <li class="nav-item">
+          <a routerLink="/travel-tourism" routerLinkActive="active" class="nav-link-opacity nav-link" href="#">
+            <svg class="text-main-color" fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+              <path
+                d="m600-120-240-84-186 72q-20 8-37-4.5T120-170v-560q0-13 7.5-23t20.5-15l212-72 240 84 186-72q20-8 37 4.5t17 33.5v560q0 13-7.5 23T812-192l-212 72Zm-40-98v-468l-160-56v468l160 56Zm80 0 120-40v-474l-120 46v468Zm-440-10 120-46v-468l-120 40v474Zm440-458v468-468Zm-320-56v468-468Z"
+              />
+            </svg>
+          </a>
+        </li>
+        -->
+
+        
+        
+        
+        <!--contact-us -->
+        
+        <li class="nav-item">
+            <a routerLink="/contact-us" routerLinkActive="active" class="nav-link-opacity nav-link">
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text text-main-color" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                    <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+                  
+                </a>
+              </li>
+              
+              <!--Helps -->
+              
+              <li class="nav-item">
+                <a routerLink="/about-us" routerLinkActive="active" class="nav-link-opacity nav-link">
+                  <svg class="text-main-color" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm1 10h-2v6h2v-6zm0-4h-2v2h2V8z"/>
+                  </svg>
+                </a>
+              </li>
+
+
+
+              <!-- profile -->
+              <li class="nav-item">
+                <a routerLink="/me/profile" routerLinkActive="active" class="nav-link-opacity nav-link" href="#">
+                  <svg class="text-main-color" fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                    <path
+                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                    />
+                  </svg>
+                </a>
+              </li>
+
+
+            </ul>
+            
+
+
+
+
+            <!-- Admin -->
+            <div class="admin btn-group ms-auto">
+              <div class="fs-6 bg-main-color">
+                <svg class="text-main-color" fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                  <path
+                    d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"
+                  />
+                </svg>
+                
+                {{ username }} {{ role }}
+
+              </div>
+              <button class="btn bg-main-color p-1 btn-sm dropdown-toggle dropdown-toggle-split" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden"></span>
+              </button>
+        <ul class="dropdown-menu p-3">
+          <div *ngIf="isAdmin" class="group">
+            <span class="bg-dark text-white p-1">{{'Admin'| translate}}</span>
+            <!-- <li class="nav-item">
+              <a class="nav-link pt-2" href="#"> {{'Categories'| translate}} </a>
+            </li> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link pt-2" href="#"> {{'Services'| translate}} </a>
+            </li>
+            <li class="nav-item border-bottom">
+              <a class="nav-link pt-2" href="#"> {{'Providers'| translate}} </a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link pt-2" routerLink="admin/dashboard/users"> {{'Users'| translate}} </a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link pt-2" routerLink="admin/dashboard/Audits"> {{'Auditing'| translate}} </a>
+            </li> -->
+
+            <!-- <li class="nav-item">
+              <a class="nav-link pt-2" href="#"> {{'Logs'| translate}} </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pt-2" href="#"> {{'Reports'| translate}} </a>
+            </li> -->
+            <li class="nav-item border-bottom">
+              <a class="nav-link" href="https://localhost:7015/swagger/index.html" target="_blank"> {{'Swagger'| translate}} </a>
+            </li>
+          </div>
+          <li class="nav-item" (click)="logOut()">
+            <a class="nav-link pt-2"> {{'LogOut'| translate}} >> </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Container -->
+<div class="bg-light">
+  <router-outlet></router-outlet>
+  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#1572ff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: #1572ff">{{'Loading...' | translate}}</p>
+  </ngx-spinner>
+</div>

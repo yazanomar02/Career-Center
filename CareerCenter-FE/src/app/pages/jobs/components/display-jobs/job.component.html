@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <!-- Services -->
+        <div id="left-list" class="col-2 sticky-top mt-4">
+            <div class="d-flex flex-column">
+                <a class="bg-second-color">
+                    <span class="rounded">-</span>
+                    <span>Categories</span>
+                </a>
+
+                <a>
+                    <div *ngFor="let category of categoriesList$ | async">
+                      <span class="square"></span>
+                      <span class="category-name">{{ category.categoryName }}</span><br>
+                    </div>
+                  </a>
+                  
+                
+            </div>
+
+        </div>
+
+        <div class="col-7 mt-4">
+            <div class="row">
+                <div class="col-6" *ngFor="let job of jobList">
+                    <div class="job">
+                        <span class="profile-pro">{{job.title| cutTwoLetters}}</span>
+                        <h3 class="job-title">{{job.title}}</h3>
+                        <div class="job-details">
+                            {{job.description}}
+                        </div>
+                        <a [href]="job.url" target="_blank" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">More Details</a>
+                        <span class="open-position">{{job.count}} open position</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col mt-4">
+            <div class="right-list sticky-top">
+                <div class="card mb-4 rounded-3 shadow-sm mt-1">
+
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>Start offering a jobs on our website</li>
+                        </ul>
+                        <a (click)="openDialog()" type="button" class="w-100 btn btn-lg btn-primary">offer a job</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

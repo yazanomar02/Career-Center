@@ -1,0 +1,13 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 16px;
+    background-color: white;
+    color: #333;
+}

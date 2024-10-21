@@ -1,0 +1,11 @@
+.btn-primary {
+    background-color: var(--nav-col);
+    border-color: var(--nav-col);
+}
+.txt {
+    color: var(--nav-col);
+}
+.num {
+    background-color: var(--nav-col);
+    color: wheat;
+}
